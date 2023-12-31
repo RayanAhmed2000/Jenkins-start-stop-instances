@@ -26,4 +26,26 @@ How to start/stop instances or perform others actions on AWS using Jenkins
 aws ec2 start-instances --instance-ids i-0536e7d06b1a96b21 --region ap-south-1
 ```
 - save project and build
+
+# Create scheduler for Job
+- Build triggers define cron
+- to run every morning at 6AM
+```
+* 6 * * *
+```
+
+### Troubleshooting Job not running on scheduled time
+- Set timezone to IST on Jenkins Server
+```
+sudo timedatectl set-timezone Asia/Kolkata
+```
+- Check changes
+```
+timedatectl status
+```
+- restart Jenkins
+```
+sudo systemctl restart jenkins
+```
+
  
